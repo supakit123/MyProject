@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
+      </head>
+      <body>
+        <div id="recaptcha-container"></div>
+        <script>
+          function onloadCallback() {
+            grecaptcha.render('recaptcha-container', {
+              'sitekey': '6LfTCB8qAAAAAM_BwWpqoFKf5B589FJptpP7uFg8',
+              'callback': function(token) {
+                window.ReactNativeWebView.postMessage(token);
+              }
+            });
+          }
+          window.onload = onloadCallback;
+        </script>
+      </body>
+    </html>
